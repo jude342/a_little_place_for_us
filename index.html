@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#fff2f6" />
+    <title>A Little Place for Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="wash wash-one"></div>
+    <div class="wash wash-two"></div>
+
+    <header>
+      <a class="brand" href="#" data-view="welcome">
+        <span class="brand-flower">✿</span>
+        <span>A Little Place <i>for Us</i></span>
+      </a>
+      <span class="header-note">a little corner made with care <b>♡</b></span>
+    </header>
+
+    <main>
+      <section class="view active" id="welcomeView">
+        <div class="hero">
+          <div class="eyebrow">✧ A LITTLE SURPRISE FOR YOU ✧</div>
+          <h1>A little place<br /><em>for us.</em></h1>
+          <p class="lead">
+            A bouquet, a few hidden notes, and a little box keeping words safe
+            until the right moment.
+          </p>
+
+          <div
+            class="bouquet-stage"
+            aria-label="A surprise button with eight little notes around it"
+          >
+            <!-- Center bouquet removed. Only the website button remains. -->
+
+            <a
+              class="surprise-button"
+              href="https://thebouquet.me/v/f3660069-3d6e-476b-a695-29f87aea09d4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              click this rain ♡
+            </a>
+            <style>
+              .bouquet-caption {
+                margin-top: 15%; /* Default for larger screens */
+              }
+
+              @media screen and (max-width: 460px) {
+                .bouquet-caption {
+                  margin-top: 25%; /* Applied on mobile screens (460px or smaller) */
+                }
+              }
+            </style>
+
+            <p class="bouquet-caption">FLOWER WILL EXPIRE IN 14 DAYS HEHE</p>
+
+            <!-- Eight clickable notes -->
+            <button
+              class="note n1"
+              data-note="Rain sorry sa mga nagagawa kong hindi okayy. Love youu po"
+            >
+              click me
+            </button>
+
+            <button
+              class="note n2"
+              data-note="Rain alam mo napapaisip ako, siguro pag mag kakaanak tayo ang name niya thunderstorm"
+            >
+              click me
+            </button>
+
+            <button
+              class="note n3"
+              data-note="Rain, wag ka na magpupuyat po hehe. Masama yun sa kalusugan"
+            >
+              click me
+            </button>
+
+            <button
+              class="note n4"
+              data-note="Rain, alam mo ba na gusto kita?"
+            >
+              click me
+            </button>
+
+            <button
+              class="note n5"
+              data-note="Let's travel the world and help people areound the world hehe"
+            >
+              click me
+            </button>
+
+            <button
+              class="note n6"
+              data-note="Rain, I hope you do good everyday!"
+            >
+              click me
+            </button>
+
+            <button
+              class="note n7"
+              data-note="Rain I know sometimes may mga hindi tayo pag kakaintindihan, but no matter what happens, kahit ano payan, I will choose to fix it with you, and I hope you fix it with me too. I love you po"
+            >
+              click me
+            </button>
+
+            <button
+              class="note n8"
+              data-note="Pogi ba ako? hahahaha"
+            >
+              click me
+            </button>
+          </div>
+
+          <div class="bouquet-caption">
+            <span>✿</span> little notes are tucked around the flowers
+            <span>✿</span>
+          </div>
+
+          <button class="primary hero-button" data-view="memory">
+            Visit the little birthday box <b>→</b>
+          </button>
+
+          <p class="tiny">Made especially for this little moment.</p>
+        </div>
+      </section>
+
+      <section class="view" id="memoryView">
+        <div class="heading box-heading">
+          <small>01 / SOMETHING TO OPEN LATER</small>
+          <h2>A little box of<br /><em>letters and memories.</em></h2>
+          <p>
+            Some words are worth waiting for. This box has a special opening
+            time.
+          </p>
+        </div>
+
+        <div class="birthday-box-wrap">
+          <div class="box-sparkle sparkle-one">✧</div>
+          <div class="box-sparkle sparkle-two">♡</div>
+          <div class="box-sparkle sparkle-three">✿</div>
+
+          <button
+            class="birthday-box"
+            id="birthdayBox"
+            type="button"
+            aria-label="Birthday memory box"
+          >
+            <span class="box-lid">
+              <span class="lid-flower">✿</span>
+              <span class="lid-ribbon"></span>
+            </span>
+
+            <span class="box-body">
+              <span class="box-bow">♡</span>
+              <span class="box-label"
+                >A LITTLE BOX<br /><b>FOR YOU</b><span>✧</span></span
+              >
+              <span class="box-date-label">OPENING ON YOUR BIRTHDAY</span>
+            </span>
+
+            <span class="box-shadow"></span>
+          </button>
+
+          <div class="box-under-note">
+            A little something is waiting inside ♡
+          </div>
+        </div>
+
+        <div class="countdown-card">
+          <div class="countdown-flower">✿</div>
+          <div class="countdown-kicker">
+            PLEASE COME BACK WHEN THE TIME ARRIVES
+          </div>
+
+          <h3 id="countdownTitle">This little box is still sealed.</h3>
+
+          <p class="opening-date">
+            May 22, 2027 <span>·</span> 5:33 AM <span>·</span> Philippines time
+          </p>
+
+          <div class="countdown" id="countdown" aria-live="polite">
+            <div><b id="days">---</b><span>days</span></div>
+            <div><b id="hours">--</b><span>hours</span></div>
+            <div><b id="minutes">--</b><span>minutes</span></div>
+            <div><b id="seconds">--</b><span>seconds</span></div>
+          </div>
+
+          <p class="countdown-message" id="countdownMessage">
+            The box will open automatically exactly at 5:33 in
+            the morning.
+          </p>
+        </div>
+
+        <button
+          class="primary inbox-trigger"
+          id="openLetterComposer"
+          type="button"
+        >
+          Leave a little letter ♡
+        </button>
+
+        <div class="opened-letters hidden" id="openedLetters">
+          <div class="opened-heading">
+            <small>THE BOX IS OPEN</small>
+            <h3>Letters waiting for you ♡</h3>
+            <p>Take your time reading each one.</p>
+          </div>
+          <div id="letterList" class="letter-list"></div>
+        </div>
+
+        <div class="actions memory-actions">
+          <button class="secondary" data-view="welcome">
+            ← Back to flowers
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Inbox popup -->
+    <div
+      class="inbox-modal hidden"
+      id="inboxModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="inboxTitle"
+    >
+      <div class="inbox-popup">
+        <button
+          class="inbox-close"
+          id="closeInbox"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="inbox-modal-heading">
+          <span>✉</span>
+          <small>A LITTLE SOMETHING TO KEEP</small>
+          <h3 id="inboxTitle">Leave a letter in the box</h3>
+          <p>Your words will stay sealed until her birthday.</p>
+        </div>
+
+        <form id="codeForm" class="code-form">
+          <label for="writeCode">Private writing code</label>
+
+          <div class="code-row">
+            <input
+              id="writeCode"
+              type="password"
+              autocomplete="off"
+              placeholder="Enter the writing code"
+              required
+            />
+            <button class="primary" type="submit">Continue</button>
+          </div>
+
+          <p class="form-message" id="codeMessage" aria-live="polite"></p>
+        </form>
+
+        <form id="letterForm" class="letter-form hidden">
+          <div class="form-heading">
+            <span>♡</span>
+            <div>
+              <small>A LETTER TO KEEP</small>
+              <h3>Write something meaningful.</h3>
+            </div>
+          </div>
+
+          <label for="authorName">Your name</label>
+          <input
+            id="authorName"
+            maxlength="60"
+            required
+            placeholder="Name or nickname"
+          />
+
+          <label for="letterEntryDate">Date</label>
+          <input id="letterEntryDate" type="date" required />
+
+          <label for="letterContent">Your letter</label>
+          <textarea
+            id="letterContent"
+            rows="8"
+            maxlength="5000"
+            required
+            placeholder="Write your letter here..."
+          ></textarea>
+
+          <div class="form-actions">
+            <span class="tiny"
+              >Your letter will remain sealed until May 22, 2027 at 5:33
+              AM.</span
+            >
+            <button class="primary" type="submit" id="saveLetter">
+              Seal my letter ♡
+            </button>
+          </div>
+
+          <p class="form-message" id="saveMessage" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Flower note popup -->
+    <div
+      class="note-modal hidden"
+      id="noteModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="noteText"
+    >
+      <button class="close" id="closeNote" aria-label="Close note">×</button>
+      <span class="note-heart">♡</span>
+      <div class="note-paper-label">A LITTLE NOTE FOR YOU</div>
+      <p id="noteText"></p>
+      <span class="note-bottom">with care ✿</span>
+    </div>
+
+    <div class="toast hidden" id="toast" role="status"></div>
+
+    <footer>
+      Made with care <span>✿</span> A Little Place for Us <span>♡</span>
+    </footer>
+  </body>
+</html>
