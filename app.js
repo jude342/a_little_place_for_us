@@ -9,7 +9,7 @@
   const OPEN_AT = new Date("2027-05-22T05:33:00+08:00");
 
   let db = null;
-  let writingCode = "";
+  let writingCode = "love";
 
   // Toast notification
   const toast = message => {
